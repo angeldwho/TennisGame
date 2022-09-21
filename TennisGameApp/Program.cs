@@ -28,7 +28,7 @@ player2.levelPlayer = int.Parse(Console.ReadLine());
 Console.WriteLine("The tennis game starts");
 Console.WriteLine("");
 
-while ((scorePlayer1 < 4 && (scorePlayer1-scorePlayer2 < 2|| scorePlayer2-scorePlayer1<2) ) || (scorePlayer2 < 4 && (scorePlayer2 - scorePlayer1 < 2 || scorePlayer1-scorePlayer2<2)))
+while ((scorePlayer1 < 4 && (scorePlayer1-scorePlayer2 < 2 || scorePlayer2-scorePlayer1<2) ) || (scorePlayer2 < 4 && (scorePlayer2 - scorePlayer1 < 2 || scorePlayer1-scorePlayer2<2)))
 {
     int scoreGamePlayer1 = 0;
     scoreGamePlayer1 = random.Next(0, 4);
@@ -76,7 +76,7 @@ while ((scorePlayer1 < 4 && (scorePlayer1-scorePlayer2 < 2|| scorePlayer2-scoreP
     Console.WriteLine($"{player2.name}'s total point are : {scorePlayer2}");
     Console.WriteLine("");
 
-    if (scoreGamePlayer1 == 3 && scoreGamePlayer1 == scoreGamePlayer2)
+    if (scoreGamePlayer1 >= 3 && scoreGamePlayer1 == scoreGamePlayer2)
     {
         if (scorePlayer1 == scorePlayer2)
         {
@@ -89,19 +89,15 @@ while ((scorePlayer1 < 4 && (scorePlayer1-scorePlayer2 < 2|| scorePlayer2-scoreP
             Console.WriteLine("");
         }
     }
-}
-
-if (scorePlayer1 >= scorePlayer2 + 2)
-{
-    Console.WriteLine($"{player1.name} win!");
-}
-else if (scorePlayer2 >= scorePlayer1 + 2)
-{
-    Console.WriteLine($"{player2.name} win!");
-}
-else if (scorePlayer1 == scorePlayer2)
-{
-    Console.WriteLine("Par!");
+    else if (scorePlayer1 >= scorePlayer2 + 2)
+    {
+        Console.WriteLine($"{player1.name} win!");
+    }
+    else if (scorePlayer2 >= scorePlayer1 + 2)
+    {
+        Console.WriteLine($"{player2.name} win!");
+    }
+    
 }
 
 Console.WriteLine($"{player1.name} has {scorePlayer1} point and {player2.name} has {scorePlayer2} point.");
