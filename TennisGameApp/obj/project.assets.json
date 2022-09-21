@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Angela\\source\\repos\\TennisGameApp\\TennisGameApp\\TennisGameApp.csproj",
+      "projectUniqueName": "C:\\Users\\Angela\\source\\repos\\TennisGame\\TennisGameApp\\TennisGameApp.csproj",
       "projectName": "TennisGameApp",
-      "projectPath": "C:\\Users\\Angela\\source\\repos\\TennisGameApp\\TennisGameApp\\TennisGameApp.csproj",
+      "projectPath": "C:\\Users\\Angela\\source\\repos\\TennisGame\\TennisGameApp\\TennisGameApp.csproj",
       "packagesPath": "C:\\Users\\Angela\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Angela\\source\\repos\\TennisGameApp\\TennisGameApp\\obj\\",
+      "outputPath": "C:\\Users\\Angela\\source\\repos\\TennisGame\\TennisGameApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Angela\\AppData\\Roaming\\NuGet\\NuGet.Config",
