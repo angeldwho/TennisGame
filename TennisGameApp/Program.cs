@@ -2,16 +2,14 @@
 
 Random random = new Random();
 
-int scorePlayer1 =0;
-int scorePlayer2 =0;
+int scorePlayer1 = 0;
+int scorePlayer2 = 0;
 int scoreGamePlayer1 = 0;
 int scoreGamePlayer2 = 0;
-int numberMatch = 1;
-
 
 Console.WriteLine("The tennis game starts");
 Console.WriteLine("");
-while (scorePlayer1 <= 4 || scorePlayer2 <= 4) {
+while ((scorePlayer1 <= 4 && scorePlayer1-scorePlayer2<2)|| (scorePlayer2 <= 4 && scorePlayer2-scorePlayer1<2)) {
     if (scorePlayer1 >= scorePlayer2 + 2)
     {
         Console.WriteLine("Player 1 win!");
@@ -22,9 +20,6 @@ while (scorePlayer1 <= 4 || scorePlayer2 <= 4) {
         Console.WriteLine("Player 2 win!");
         break;
     }
-
-    Console.WriteLine($"Match number : {numberMatch}");
-    Console.WriteLine("");
 
     scoreGamePlayer1 =random.Next(0,4);
     scorePlayer1 += scoreGamePlayer1;
@@ -83,7 +78,6 @@ while (scorePlayer1 <= 4 || scorePlayer2 <= 4) {
             Console.WriteLine("");
         }
     }
-    numberMatch++;
 }
 
 Console.WriteLine($"Player 1 has {scorePlayer1} point and player 2 has {scorePlayer2} point.");
