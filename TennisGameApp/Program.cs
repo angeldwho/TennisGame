@@ -4,8 +4,6 @@ Random random = new Random();
 
 int scorePlayer1 = 0;
 int scorePlayer2 = 0;
-int scoreGamePlayer1 = 0;
-int scoreGamePlayer2 = 0;
 
 Console.WriteLine("The tennis game starts");
 Console.WriteLine("");
@@ -21,6 +19,7 @@ while ((scorePlayer1 <= 4 && scorePlayer1-scorePlayer2<2)|| (scorePlayer2 <= 4 &
         break;
     }
 
+    int scoreGamePlayer1 = 0;
     scoreGamePlayer1 =random.Next(0,4);
     scorePlayer1 += scoreGamePlayer1;
     Console.WriteLine($"It's player 1 turn :  ");
@@ -43,6 +42,7 @@ while ((scorePlayer1 <= 4 && scorePlayer1-scorePlayer2<2)|| (scorePlayer2 <= 4 &
 
     Console.WriteLine($"Player 1 total point are : {scorePlayer1}");
     Console.WriteLine("");
+    int scoreGamePlayer2 = 0;
     scoreGamePlayer2 = random.Next(0,4);
     scorePlayer2 += scoreGamePlayer2;
     Console.WriteLine($"It's player 2 turn :  ");
