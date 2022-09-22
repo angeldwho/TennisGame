@@ -3,8 +3,8 @@ using TennisGameApp;
 
 Random random = new Random();
 
-int scorePlayer1 = 0;
-int scorePlayer2 = 0;
+int scorePlayer1=0 ;
+int scorePlayer2=0 ;
 
 Player player1 = new Player();
 Player player2 = new Player();
@@ -32,14 +32,8 @@ player2.ToString();
 Console.WriteLine("The tennis game starts");
 Console.WriteLine("");
 
-while ((scorePlayer1 < 4 && scorePlayer1 < scorePlayer2 + 2 ) || (scorePlayer2 < 4 && scorePlayer2 < scorePlayer1 + 2 ))
-//aspetta che scorePlayer2 sia >4
-{
-    int scoreGamePlayer1;
-    scoreGamePlayer1 = random.Next(0, 4);
-    scorePlayer1 += scoreGamePlayer1;
-    Console.WriteLine($"It's {player1.name} turn :  ");
-    switch (scoreGamePlayer1)
+void namePoint(int scoreGame) {
+    switch (scoreGame)
     {
         case (0):
             Console.WriteLine("Love point!");
@@ -53,47 +47,47 @@ while ((scorePlayer1 < 4 && scorePlayer1 < scorePlayer2 + 2 ) || (scorePlayer2 <
         case (3):
             Console.WriteLine("Forty points!");
             break;
-    }
-
-    Console.WriteLine($"{player1.name}'s total point are : {scorePlayer1}");
-    Console.WriteLine("");
-    int scoreGamePlayer2;
-    scoreGamePlayer2 = random.Next(0, 4);
-    scorePlayer2 += scoreGamePlayer2;
-    Console.WriteLine($"It's {player2.name} turn :  ");
-    switch (scoreGamePlayer2)
-    {
-
-        case (0):
-            Console.WriteLine("Love point!");
-            break;
-        case (1):
-            Console.WriteLine("Fifteen points!");
-            break;
-        case (2):
-            Console.WriteLine("Thirty points!");
-            break;
-        case (3):
-            Console.WriteLine("Forty points!");
-            break;
-    }
-    Console.WriteLine($"{player2.name}'s total point are : {scorePlayer2}");
-    Console.WriteLine("");
-
-    if (scoreGamePlayer1 >= 3 && scoreGamePlayer1 == scoreGamePlayer2)
-    {
-        if (scorePlayer1 == scorePlayer2)
-        {
-            Console.WriteLine("The score is deuce!");
-            Console.WriteLine("");
-        }
-        else if (scorePlayer1 == scorePlayer2 + 1 || scorePlayer2 == scorePlayer1 + 1)
-        {
-            Console.WriteLine("The score is advantage");
-            Console.WriteLine("");
-        }
     }
 }
+
+
+
+bool condizione1 = (scorePlayer1 < 4 && scorePlayer1 < scorePlayer2 + 2);
+bool condizione2 = (scorePlayer2 < 4 && scorePlayer2 < scorePlayer1 + 2); 
+while (condizione1 || condizione2)
+{
+        int scoreGamePlayer1;
+        scoreGamePlayer1 = random.Next(0, 4);
+        scorePlayer1 += scoreGamePlayer1;
+        Console.WriteLine($"It's {player1.name} turn :  ");
+        namePoint(scoreGamePlayer1);
+
+        Console.WriteLine($"{player1.name}'s total point are : {scorePlayer1}");
+        Console.WriteLine("");
+        int scoreGamePlayer2;
+        scoreGamePlayer2 = random.Next(0, 4);
+        scorePlayer2 += scoreGamePlayer2;
+        Console.WriteLine($"It's {player2.name} turn :  ");
+        namePoint(scoreGamePlayer2);
+
+        Console.WriteLine($"{player2.name}'s total point are : {scorePlayer2}");
+        Console.WriteLine("");
+
+        if (scoreGamePlayer1 >= 3 && scoreGamePlayer1 == scoreGamePlayer2)
+        {
+            if (scorePlayer1 == scorePlayer2)
+            {
+                Console.WriteLine("The score is deuce!");
+                Console.WriteLine("");
+            }
+            else if (scorePlayer1 == scorePlayer2 + 1 || scorePlayer2 == scorePlayer1 + 1)
+            {
+                Console.WriteLine("The score is advantage");
+                Console.WriteLine("");
+            }
+        } 
+}
+
 if (scorePlayer1 == scorePlayer2)
 {
     Console.WriteLine("Par!");
