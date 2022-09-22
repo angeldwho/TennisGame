@@ -5,7 +5,6 @@ Random random = new Random();
 
 int scorePlayer1=0 ;
 int scorePlayer2=0 ;
-
 Player player1 = new Player();
 Player player2 = new Player();
 
@@ -49,15 +48,11 @@ void namePoint(int scoreGame) {
             break;
     }
 }
-
-
-
-bool condizione1 = (scorePlayer1 < 4 && scorePlayer1 < scorePlayer2 + 2);
-bool condizione2 = (scorePlayer2 < 4 && scorePlayer2 < scorePlayer1 + 2); 
-while (condizione1 || condizione2)
+while ((scorePlayer1 < 4 || scorePlayer2 < 4) || (Math.Abs(scorePlayer1 - scorePlayer2) < 2))
 {
         int scoreGamePlayer1;
         scoreGamePlayer1 = random.Next(0, 4);
+    Console.WriteLine(scoreGamePlayer1);
         scorePlayer1 += scoreGamePlayer1;
         Console.WriteLine($"It's {player1.name} turn :  ");
         namePoint(scoreGamePlayer1);
@@ -65,34 +60,26 @@ while (condizione1 || condizione2)
         Console.WriteLine($"{player1.name}'s total point are : {scorePlayer1}");
         Console.WriteLine("");
         int scoreGamePlayer2;
+    
         scoreGamePlayer2 = random.Next(0, 4);
-        scorePlayer2 += scoreGamePlayer2;
+       Console.WriteLine(scoreGamePlayer2);
+    scorePlayer2 += scoreGamePlayer2;
         Console.WriteLine($"It's {player2.name} turn :  ");
         namePoint(scoreGamePlayer2);
 
         Console.WriteLine($"{player2.name}'s total point are : {scorePlayer2}");
-        Console.WriteLine("");
-
-        if (scoreGamePlayer1 >= 3 && scoreGamePlayer1 == scoreGamePlayer2)
-        {
-            if (scorePlayer1 == scorePlayer2)
-            {
-                Console.WriteLine("The score is deuce!");
-                Console.WriteLine("");
-            }
-            else if (scorePlayer1 == scorePlayer2 + 1 || scorePlayer2 == scorePlayer1 + 1)
-            {
-                Console.WriteLine("The score is advantage");
-                Console.WriteLine("");
-            }
-        } 
+        Console.WriteLine("");   
 }
 
 if (scorePlayer1 == scorePlayer2)
 {
-    Console.WriteLine("Par!");
+    Console.WriteLine("The score is deuce!");
 }
-if (scorePlayer1 >= scorePlayer2 + 2)
+else if (scorePlayer1 == scorePlayer2 + 1 || scorePlayer2 == scorePlayer1 + 1)
+{
+    Console.WriteLine("The score is advantage");
+}
+else if (scorePlayer1 >= scorePlayer2 + 2)
 {
     Console.WriteLine($"{player1.name} win!");
 }
@@ -101,6 +88,4 @@ else if (scorePlayer2 >= scorePlayer1 + 2)
     Console.WriteLine($"{player2.name} win!");
 
 }
-
 Console.WriteLine($"{player1.name} has {scorePlayer1} point and {player2.name} has {scorePlayer2} point.");
-

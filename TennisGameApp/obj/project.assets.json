@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Angela\\source\\repos\\TennisGame\\TennisGameApp\\TennisGameApp.csproj",
-      "projectName": "TennisGameApp",
-      "projectPath": "C:\\Users\\Angela\\source\\repos\\TennisGame\\TennisGameApp\\TennisGameApp.csproj",
+      "projectUniqueName": "C:\\Users\\Angela\\source\\repos\\TennisGame\\TennisGameApp\\TennisGameApp.BLL.csproj",
+      "projectName": "TennisGameApp.BLL",
+      "projectPath": "C:\\Users\\Angela\\source\\repos\\TennisGame\\TennisGameApp\\TennisGameApp.BLL.csproj",
       "packagesPath": "C:\\Users\\Angela\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Angela\\source\\repos\\TennisGame\\TennisGameApp\\obj\\",
       "projectStyle": "PackageReference",
