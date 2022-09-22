@@ -52,18 +52,18 @@ while ((scorePlayer1 < 4 || scorePlayer2 < 4) || (Math.Abs(scorePlayer1 - scoreP
 {
         int scoreGamePlayer1;
         scoreGamePlayer1 = random.Next(0, 4);
-    Console.WriteLine(scoreGamePlayer1);
+        Console.WriteLine(scoreGamePlayer1);
         scorePlayer1 += scoreGamePlayer1;
         Console.WriteLine($"It's {player1.name} turn :  ");
         namePoint(scoreGamePlayer1);
 
         Console.WriteLine($"{player1.name}'s total point are : {scorePlayer1}");
         Console.WriteLine("");
+
         int scoreGamePlayer2;
-    
         scoreGamePlayer2 = random.Next(0, 4);
-       Console.WriteLine(scoreGamePlayer2);
-    scorePlayer2 += scoreGamePlayer2;
+        Console.WriteLine(scoreGamePlayer2);
+        scorePlayer2 += scoreGamePlayer2;
         Console.WriteLine($"It's {player2.name} turn :  ");
         namePoint(scoreGamePlayer2);
 
